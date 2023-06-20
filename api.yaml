@@ -1,0 +1,30 @@
+type: api #Tipo de artefacto exportado mediante APICTL - Type of the exported artifact using APICTL
+version: v4.1.0 #Api manager version - API Manager version
+data: #Contiene los metadatos de la API - Contains the meta data of the API
+  name: SwaggerPetstore #Nombre del proyecto sin espacios - Name of the API without Spaces [required]
+  description: 'This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.'
+  context: /v2 #contexto de la API (barra inclinada obligatorio) - Context of the API with a leading slash [required]
+  version: 1.0.6 # version de la API - Version of the API [required]
+  provider: admin #Nombre del provedor de la API - Provider name of the API [required]
+  lifeCycleStatus: PUBLISHED #Estado en el ciclo de vida - Life cycle status of the API
+  isRevision: false #activacion de la cache de activacion? - Is response cache is enabled? true|false
+  revisionId: 0 #Tiempo de respuesta de la cache - Response cache time out
+  type: HTTP #Tipo de api - Type of the API {HTTP|WS|GRAPHQL|SOAPTOREST} [required]
+  transport: #Protocolos de transporte en forma de lista - Transport protocols as a list
+  - http
+  - https
+  tags: #Etiquetas de la APi en forma de lista - Tags for the API as a list
+  - pet
+  - store
+  - user
+  policies: #Politicas de suscripcion disponibles - Available subscription policies (tiers) as a list
+  - Unlimited
+  visibility: PUBLIC #visibilidad API - Visibility level of the API {PUBLIC|PRIVATE|RESTRICTED} [required]
+  endpointConfig: #Confifuracion del punto final de la API 
+    endpoint_type: http #Tipo de punto final - Endpoint type
+    production_endpoints: #Producion de puntos  finales - Sandbox endpoints
+      url: https://petstore.swagger.io/v2
+    sandbox_endpoints:
+      url: https://petstore.swagger.io/v2
+  endpointImplementationType: ENDPOINT #Implementacion de puntos finales - Implementation of endpoints {ENDPOINT|INLINE }
+  websubSubscriptionConfiguration: null #Configuracion de suspricion de una API  - Subscription configurations of a WebSub API (Webhook) (This will be in JSON format)
